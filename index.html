@@ -1,0 +1,33 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <button id="play_button" onclick="play">Play</button>
+    <button id="choice_one" value=""></button>
+    <button id="choice_two" value=""></button>
+    <button id="choice_three" value=""></button>
+  </body>
+  <script>
+    // Configuration settings for Richie when the page 
+    // initially starts up and sets up any necessary
+    // global variables for the script
+    var choiceOne = document.getElementById("choice_one");
+    var choiceTwo = document.getElementById("choice_two");
+    var choiceThree = document.getElementById("choice_three");
+    var playButton = document.getElementById("play_button");
+
+    choiceOne.style.visibility = "hidden";
+    choiceTwo.style.visibility = "hidden";
+    choiceThree.style.visibility = "hidden";
+
+    // Play function: Hides the current play button 
+    // and begins to execute the gam
+    function play () {
+      playButton.style.visibility = "hidden";
+      generateChoices();      
+    }
+
+    // Generate Choices Function: Begins to generate the three choices for the user
+    // NOTE: IN DEVELOPMENT
+  </script>
+</html>
