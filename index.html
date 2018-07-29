@@ -44,12 +44,14 @@
       generateChoices();      
     }
 
-    // Generate Choices Function: Begins to generate the three choices for the user\
-    // NOTE: THIS IS A STUB
+    // Generate Choices Function: Begins to generate the three choices for the user
     function generateChoices () {
       var choiceLength = choicesList.length;
+
+      // Pick a random choice from the choicesList
       var genChoiceOne = choicesList[Math.floor(Math.random() * choiceLength)];
-      
+
+      // Display that random choice in the button
       choiceOne.value = genChoiceOne;
       choiceOne.innerHTML = genChoiceOne;
       choiceOne.style.visibility = "visible";
