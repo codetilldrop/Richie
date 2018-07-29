@@ -2,8 +2,9 @@
   <head>
   </head>
   <body>
+    <h1 id="capital">Capital: 0</h1>
     <button id="play_button" onclick="play()">Play</button>
-    <button id="choice_one" value=""></button>
+    <button id="choice_one" value="" onclick="choiceSelected(this)"></button>
     <button id="choice_two" value=""></button>
     <button id="choice_three" value=""></button>
   </body>
@@ -15,10 +16,11 @@
     var choiceTwo = document.getElementById("choice_two");
     var choiceThree = document.getElementById("choice_three");
     var playButton = document.getElementById("play_button");
+    var capitalText = document.getElementById("capital");
     
     // Capital is a variable which will be used later on 
     // as development progresses
-    var capital = 0;
+    var capital = 0
     
     /*
     Choices is an object which will hold all the choices as
@@ -27,7 +29,7 @@
     */
     var choices = {
       "Invest $50 in at a fixed rate of 40%": {
-        points: "$70"
+        points: 70
       } 
     };
 
@@ -59,9 +61,15 @@
     
     // Choice Selected Function: When a choice has been selected
     // The appropriate action is determined here
-    // NOTE: THIS IS A STUB
     function choiceSelected (selectedChoice) {
-      // Insert Code
+      var selectedValue = selectedChoice.value;
+      console.log(selectedValue);
+
+      var selectedValueProps = choices[selectedValue].points;
+      capital += selectedValueProps;
+      console.log(capital);
+
+      capitalText.innerHTML = "Capital: $" + capital;
     }
   </script>
 </html>
