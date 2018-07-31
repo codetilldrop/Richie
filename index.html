@@ -18,6 +18,8 @@
     var playButton = document.getElementById("play_button");
     var capitalText = document.getElementById("capital");
     
+    var endOfYear = 5;
+
     // Capital is a variable which will be used later on 
     // as development progresses
     var capital = 0
@@ -28,9 +30,24 @@
     holding the stats/captial/points/chance for each choice
     */
     var choices = {
-      "Invest $50 in at a fixed rate of 40%": {
-        points: 70
-      } 
+      "Invest $50 at a fixed rate of 40%": {
+        points: 70,
+        chance: false,
+        loss: false
+      },
+
+      "Invest $100 at a variable rate starting at 50%": {
+        chance: true,
+        pointsOnFail: 110,
+        pointsOnWin: 150,
+        loss: false
+      },
+
+      "You earn $500 as passive income": {
+        points: 500,
+        chance: false,
+        loss: false,
+      }
     };
 
     var choicesList = Object.keys(choices);
@@ -50,13 +67,23 @@
     function generateChoices () {
       var choiceLength = choicesList.length;
 
-      // Pick a random choice from the choicesList
+      // Pick random choices from the choicesList
       var genChoiceOne = choicesList[Math.floor(Math.random() * choiceLength)];
+      var genChoiceTwo = choicesList[Math.floor(Math.random() * choiceLength)];
+      var genChoiceThree = choicesList[Math.floor(Math.random() * choiceLength)];
 
-      // Display that random choice in the button
+      // Display those random choices in the buttons
       choiceOne.value = genChoiceOne;
       choiceOne.innerHTML = genChoiceOne;
       choiceOne.style.visibility = "visible";
+
+      choiceTwo.value = genChoiceTwo;
+      choiceTwo.innerHTML = genChoiceTwo;
+      choiceTwo.style.visibility = "visible";
+
+      choiceThree.value = genChoiceTwo;
+      choiceThree.innerHTML = genChoiceTwo;
+      choiceThree.style.visibility = "visible";
     }
     
     // Choice Selected Function: When a choice has been selected
