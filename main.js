@@ -37,9 +37,14 @@ var choices = {
     points: 500,
     chance: false,
     loss: false,
+  },
+
+  "You invest a considerable amount of money in an unstable startup": {
+    lostPoints: -1000,
+    chance: false,
+    loss: true
   }
 };
-
 var choicesList = Object.keys(choices);
 
 choiceOne.style.visibility = "hidden";
@@ -82,7 +87,6 @@ function generateChoices () {
 // The appropriate action is determined here
 function choiceSelected (selectedChoice) {
   var selectedValue = selectedChoice.value;
-  console.log(selectedValue);
   var selectedValueProps = choices[selectedValue];
 
   // Working out whether the user gains or loses capital
@@ -101,11 +105,15 @@ function choiceSelected (selectedChoice) {
       capital += selectedValueProps.points; 
     }
   } else {
-    // Insert code for if they have picked a choice which makes
-    // them lose capital
+    capital += selectedValueProps.lostPoints;
+    console.log(capital);
   }
-
-  capitalText.innerHTML = "Capital: $" + capital;
+  
+  if (capital < 0) {
+    capitalText.innerHTML = "Capital: -$" + (capital * -1); 
+  } else {
+    capitalText.innerHTML = "Capital: $" + capital;
+  }
   generateChoices();
 }
 
@@ -115,5 +123,10 @@ function stop() {
   choiceTwo.style.visibility = "hidden";
   choiceThree.style.visibility = "hidden"; 
 
+  if (capital < 0) {
+    capitalText.innerHTML = "Your Generated Amount of Capital is -$" + (capital * -1); 
+  } else {
+    capitalText.innerHTML = "Your Generated Amount of Capital is $" + capital;
+  };
   stopButton.style.visibility = "hidden";
 }
