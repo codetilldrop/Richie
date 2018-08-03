@@ -7,8 +7,10 @@ var choiceThree = document.getElementById("choice_three");
 var playButton = document.getElementById("play_button");
 var capitalText = document.getElementById("capital");
 var stopButton = document.getElementById("stop_button");
+var years = document.getElementById("years");
 
 var endOfYear = 5;
+var currentYear = 2018;
 
 // Capital is a variable which will be used later on 
 // as development progresses
@@ -108,12 +110,16 @@ function choiceSelected (selectedChoice) {
     capital += selectedValueProps.lostPoints;
     console.log(capital);
   }
-  
-  if (capital < 0) {
-    capitalText.innerHTML = "Capital: -$" + (capital * -1); 
+    
+  // Dealing with the 5 choices represents a year system
+  if (endOfYear === 1) {
+    endOfYear = 5;
+    years.innerHTML += "<br>" + currentYear + ": " + "$" + capital;
+    currentYear = currentYear + 1
   } else {
-    capitalText.innerHTML = "Capital: $" + capital;
+    endOfYear = endOfYear - 1
   }
+
   generateChoices();
 }
 
