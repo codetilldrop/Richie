@@ -10,7 +10,7 @@ var stopButton = document.getElementById("stop_button");
 var years = document.getElementById("years");
 
 var endOfYear = 5;
-var currentYear = 2018;
+var currentYear = new Date().getFullYear();;
 
 // Capital is a variable which will be used later on 
 // as development progresses
@@ -114,7 +114,7 @@ function choiceSelected (selectedChoice) {
   // Dealing with the 5 choices represents a year system
   if (endOfYear === 1) {
     endOfYear = 5;
-    years.innerHTML += "<br>" + currentYear + ": " + "$" + capital;
+    years.innerHTML += "<br>" + currentYear + ": " + "You have $" + capital;
     currentYear = currentYear + 1
   } else {
     endOfYear = endOfYear - 1
