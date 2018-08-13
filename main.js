@@ -86,9 +86,27 @@ function generateChoices () {
   var choiceLength = choicesList.length;
 
   // Pick random choices from the choicesList
-  var genChoiceOne = choicesList[Math.floor(Math.random() * choiceLength)];
-  var genChoiceTwo = choicesList[Math.floor(Math.random() * choiceLength)];
-  var genChoiceThree = choicesList[Math.floor(Math.random() * choiceLength)];
+  var chosenNumbers = []
+  var randomNumber = Math.floor(Math.random() * choiceLength); 
+  var genChoiceOne = choicesList[randomNumber];
+
+  chosenNumbers.push(randomNumber)
+
+  randomNumber = Math.floor(Math.random() * choiceLength); 
+  while (randomNumber in chosenNumbers) {
+    randomNumber = Math.floor(Math.random() * choiceLength);  
+  } 
+
+  var genChoiceTwo = choicesList[randomNumber];
+
+  chosenNumbers.push(randomNumber)
+
+  randomNumber = Math.floor(Math.random() * choiceLength); 
+  while (randomNumber in chosenNumbers) {
+    randomNumber = Math.floor(Math.random() * choiceLength);  
+  } 
+
+  var genChoiceThree = choicesList[randomNumber];
 
   // Display those random choices in the buttons
   choiceOne.value = genChoiceOne;
@@ -99,8 +117,8 @@ function generateChoices () {
   choiceTwo.innerHTML = genChoiceTwo;
   choiceTwo.style.visibility = "visible";
 
-  choiceThree.value = genChoiceTwo;
-  choiceThree.innerHTML = genChoiceTwo;
+  choiceThree.value = genChoiceThree;
+  choiceThree.innerHTML = genChoiceThree;
   choiceThree.style.visibility = "visible";
 }
 
