@@ -78,6 +78,11 @@ stopButton.style.visibility = "hidden";
 function play () {
   playButton.style.visibility = "hidden";
   stopButton.style.visibility = "visible";
+
+  // Play music because music is good
+  var audio = document.getElementById("audio");
+  audio.play();
+            
   generateChoices();      
 }
 
@@ -172,4 +177,5 @@ function stop() {
     capitalText.innerHTML = "Your Generated Amount of Capital is $" + capital;
   };
   stopButton.style.visibility = "hidden";
+  audio.pause();
 }
