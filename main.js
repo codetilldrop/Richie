@@ -41,12 +41,31 @@ var choices = {
     loss: false,
   },
 
-  "You invest a considerable amount of money in an unstable startup": {
+  "You invest $1000 amount of money in an unstable startup": {
     lostPoints: -1000,
     chance: false,
     loss: true
+  },
+
+  "You invest $1000 into the stock market based off advice from a high end broker": {
+    points: 10000,
+    chance: false,
+    loss: false
+  },
+
+  "You invest in a house which costs $100000 in a rural area": {
+    lostPoints: -10000,
+    chance: false,
+    loss: true 
+  },
+
+  "You sell you're shares of a company equivalent $10000 during a GFC": {
+    lostPoints: -3000,
+    chance: false,
+    loss: true  
   }
 };
+
 var choicesList = Object.keys(choices);
 
 choiceOne.style.visibility = "hidden";
