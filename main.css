@@ -1,14 +1,7 @@
 body {
   background-color: #FFDC00;
   font-family: 'Do Hyeon', sans-serif;
-}
-
-h1 {
-  text-align: center;
-}
-
-h2 {
-  text-align: center;
+  font-size: 20px;
 }
 
 button {
@@ -18,4 +11,22 @@ button {
 
 .center_items {
   text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+#years {
+  font-size: 0.8em;
+  text-align: left;
+}
+button {
+  font-size: 0.9em;
+  border-radius: 10px;
+  border: solid black;
 }

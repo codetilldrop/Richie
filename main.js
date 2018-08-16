@@ -54,7 +54,7 @@ var choices = {
   },
 
   "You invest in a house which costs $100000 in a rural area": {
-    lostPoints: -10000,
+    lostPoints: -8000,
     chance: false,
     loss: true 
   },
@@ -63,6 +63,30 @@ var choices = {
     lostPoints: -3000,
     chance: false,
     loss: true  
+  },
+
+  "You invest $3000 in a high interest and fixed rate account": {
+    points: 5250,
+    chance: false,
+    loss: false 
+  },
+
+  "You make an investment of $25000 in the stock market through a Non-advisory Stock Broker and performed minimal research": {
+    lostPoints: -6000,
+    chance: false,
+    loss: true
+  },
+
+  "You put $3000 into superannuation": {
+    points: 3000,
+    chance: false,
+    loss: false
+  }, 
+
+  "You invest $5000 through an internet broker": {
+    points: 10000,
+    chance: false,
+    loss: false
   }
 };
 
@@ -73,11 +97,14 @@ choiceTwo.style.visibility = "hidden";
 choiceThree.style.visibility = "hidden";
 
 stopButton.style.visibility = "hidden";
+
+years.style.visibility = "hidden";
 // Play function: Hides the current play button 
 // and begins to execute the game
 function play () {
   playButton.style.visibility = "hidden";
   stopButton.style.visibility = "visible";
+  years.style.visibility = "visible";
 
   // Play music because music is good
   var audio = document.getElementById("audio");
