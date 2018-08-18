@@ -87,6 +87,13 @@ var choices = {
     points: 10000,
     chance: false,
     loss: false
+  },
+
+  "Your borrow $15750 from a bank to make an investment without knowing if you can make the repayments": {
+    chance: true,
+    pointsOnFail: 17000,
+    pointsOnWin: 20000,
+    loss: false
   }
 };
 
