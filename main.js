@@ -94,6 +94,12 @@ var choices = {
     pointsOnFail: 17000,
     pointsOnWin: 20000,
     loss: false
+  },
+
+  "You invest in a $200000 property in an area well known for aggressive and poor tennants": {
+    chance: false,
+    lostPoints: -200000,
+    loss: true
   }
 };
 
