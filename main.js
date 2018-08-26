@@ -8,9 +8,12 @@ var playButton = document.getElementById("play_button");
 var capitalText = document.getElementById("capital");
 var stopButton = document.getElementById("stop_button");
 var years = document.getElementById("years");
-
+var instructionButton = document.getElementById("instruction_button");
+var instructions = document.getElementById("instructions");
+var choicesDiv  = document.getElementById("choices");
+var basicInfo = document.getElementById("basic_info");
 var endOfYear = 5;
-var currentYear = new Date().getFullYear();;
+var currentYear = new Date().getFullYear();
 
 // Capital is a variable which will be used later on 
 // as development progresses
@@ -118,6 +121,9 @@ function play () {
   playButton.style.visibility = "hidden";
   stopButton.style.visibility = "visible";
   years.style.visibility = "visible";
+  instructions.remove();
+  instructionButton.remove();
+  basicInfo.remove();
 
   // Play music because music is good
   var audio = document.getElementById("audio");
@@ -126,7 +132,12 @@ function play () {
   generateChoices();      
 }
 
-// Generate Choices Function: Begins to generate the three choices for the user
+function showInstructions() {
+  instructionButton.style.visibility = "hidden";
+  instructions.innerHTML = "<br>On the screen, you will notice 3 decisions appear. When you click on a decision, new ones pop up. Every 5 decisions you make add up to a value of money you earn/lose per year. The smarter investment decisions you make, the more money you generate on a per year basis. You may not always get reasonable investment decisions so it is important to make sure you choose the best one possible out of the set. When you choose to stop the game, your generated amount of capital (money) is shown and you can review how you went over the years. To play again, refresh the page.";
+}
+
+// Generate Choices Function: Begins to generate the three choices for the use
 function generateChoices () {
   var choiceLength = choicesList.length;
 
@@ -216,6 +227,11 @@ function stop() {
   } else {
     capitalText.innerHTML = "Your Generated Amount of Capital is $" + capital;
   };
+  choiceOne.remove();
+  choiceTwo.remove();
+  choiceThree.remove();
+  playButton.remove();
   stopButton.style.visibility = "hidden";
+  choicesDiv.remove();
   audio.pause();
 }

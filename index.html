@@ -5,12 +5,18 @@
   </head>
   <body>
     <div class='center_items'>
+    <div id="basic_info">
     <h1>Richie</h1>
     <h2>The Game about Investing</h2>
     <h3>By Dillon de Silva</h3>
+    <h4>Music Credit is from Bensound</h4>
+    </div>
     <div class='center_items'>
-    <audio id="audio" src=""></audio>
+    <audio id="audio" src="bensound-cute.mp3"></audio>
     <button id="play_button" onclick="play()">Play</button>
+    <button id="instruction_button" onclick="showInstructions()">How to Play</button>
+    <div id="instructions"></div>
+    <div id="choices">
     <button id="choice_one" value="" onclick="choiceSelected(this)"></button>
     <br>
     <br>
@@ -20,6 +26,8 @@
     <button id="choice_three" value="" onclick="choiceSelected(this)"></button>
     <br>
     <br>
+    </div>
+    </div>
     <button id="stop_button" onclick="stop()">Stop</button>
     <h1 id="capital"></h1>
     <div id="years">
