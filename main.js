@@ -124,10 +124,6 @@ function play () {
   instructions.remove();
   instructionButton.remove();
   basicInfo.remove();
-
-  // Play music because music is good
-  var audio = document.getElementById("audio");
-  audio.play();
             
   generateChoices();      
 }

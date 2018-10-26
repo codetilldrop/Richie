@@ -1,7 +1,7 @@
 body {
-  background-color: #FFDC00;
-  font-family: 'Do Hyeon', sans-serif;
+  background-color: #FF7F50;
   font-size: 20px;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 
 button {
@@ -15,6 +15,7 @@ button {
 
 h1 {
   font-size: 2em;
+  font-family: 'Quicksand', sans-serif;
 }
 
 h2 {
@@ -26,7 +27,12 @@ h2 {
   text-align: left;
 }
 button {
-  font-size: 0.9em;
-  border-radius: 10px;
+  font-size: 1.2em;
   border: solid black;
+}
+
+button:hover {
+  background: #FFA500;
+  color: white;
+  border: solid white;
 }
